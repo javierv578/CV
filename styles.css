@@ -708,6 +708,46 @@ button {
   margin-bottom: var(--space-md);
 }
 
+/* Piezas de video embebidas (Google Drive u otro proveedor) */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+}
+
+.video-card__title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-xs);
+}
+
+.video-card__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+}
+
+.video-card__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* --------------------------------------------------------------------------
    6. SECCIÓN HOME (HERO)
    -------------------------------------------------------------------------- */
@@ -942,7 +982,8 @@ button {
   }
 
   .project-grid,
-  .card-grid {
+  .card-grid,
+  .video-grid {
     grid-template-columns: 1fr;
   }
 
