@@ -711,8 +711,8 @@ button {
 /* Piezas de video embebidas (Google Drive u otro proveedor) */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-sm);
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
 }
 
 .video-card {
