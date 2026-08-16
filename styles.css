@@ -724,16 +724,16 @@ button {
 
 .video-card__title {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .video-card__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: clamp(320px, 70vh, 680px);
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg-elevated);
@@ -1023,5 +1023,9 @@ button {
 
   .stat-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .video-card__frame {
+    height: clamp(260px, 56vh, 480px);
   }
 }
