@@ -333,23 +333,17 @@ button {
 }
 
 .nav__link {
+  position: relative;
   background: none;
   border: none;
   color: var(--text-secondary);
   font-size: 0.92rem;
   font-weight: 500;
-  padding: 0.55rem 0.85rem;
+  padding: 0.55rem 0.9rem;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
-}
-
-.nav__index {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-muted);
 }
 
 .nav__link:hover {
@@ -362,8 +356,14 @@ button {
   background: var(--accent-soft);
 }
 
-.nav__link.is-active .nav__index {
-  color: var(--accent);
+/* Indicador tipo "tally light" en vez de un número de sección */
+.nav__link.is-active::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 0.5rem;
 }
 
 .nav__toggle {
@@ -502,6 +502,33 @@ button {
   margin-bottom: var(--space-lg);
 }
 
+/* Variante "bento": la primera tarjeta destaca ocupando dos columnas */
+.card-grid--bento .card:first-child {
+  grid-column: span 2;
+}
+
+.card-grid--bento .card:first-child h3 {
+  font-size: 1.2rem;
+}
+
+/* Fila de logros compacta (Faro Interno): la primera tarjeta pesa más */
+.achievement-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.achievement-row .card {
+  flex: 1 1 240px;
+}
+
+.achievement-row .card--feature {
+  flex: 1.6 1 320px;
+  background: linear-gradient(160deg, var(--accent-soft), transparent 65%), var(--surface);
+  border-color: var(--accent);
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -550,6 +577,34 @@ button {
   object-fit: contain;
   object-position: center;
   background: var(--bg-elevated);
+}
+
+/* CNN Chile: bloque editorial texto + foto lado a lado */
+.editorial-block {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-lg);
+  align-items: start;
+  margin-bottom: var(--space-lg);
+}
+
+.page-head--editorial {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.media-block--editorial {
+  margin-bottom: 0;
+}
+
+.media-block--editorial img {
+  aspect-ratio: 4 / 5;
+}
+
+/* Metro de Santiago: foto ancha después de las métricas */
+.media-block--wide img {
+  aspect-ratio: 21 / 9;
 }
 
 .media-block__caption {
@@ -794,13 +849,23 @@ button {
    -------------------------------------------------------------------------- */
 .hero {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: var(--space-2xl);
   align-items: start;
 }
 
+.hero__profile {
+  margin-top: 3.6rem;
+}
+
+.press-card__frame {
+  transform: rotate(-1.4deg);
+}
+
 .hero__name {
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
 }
 
 .hero__role {
@@ -808,6 +873,7 @@ button {
   color: var(--text);
   font-weight: 500;
   margin-bottom: var(--space-md);
+  max-width: 42ch;
 }
 
 .hero__summary {
@@ -939,6 +1005,12 @@ button {
   transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
+/* El nombre principal entra con más peso que el resto del contenido */
+.hero__name.reveal {
+  transform: translateY(34px);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+}
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -977,6 +1049,18 @@ button {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .card-grid--bento .card:first-child {
+    grid-column: span 2;
+  }
+
+  .editorial-block {
+    grid-template-columns: 1fr;
+  }
+
+  .media-block--editorial img {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 860px) {
@@ -987,6 +1071,11 @@ button {
 
   .hero__profile {
     max-width: 280px;
+    margin-top: 0;
+  }
+
+  .press-card__frame {
+    transform: none;
   }
 
   .nav {
@@ -1025,6 +1114,18 @@ button {
   .project-grid,
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-grid--bento .card:first-child {
+    grid-column: span 1;
+  }
+
+  .achievement-row {
+    flex-direction: column;
+  }
+
+  .achievement-row .card--feature {
+    flex: 1 1 auto;
   }
 
   .academic-card {

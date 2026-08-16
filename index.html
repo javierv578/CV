@@ -38,28 +38,23 @@
     <nav class="nav" id="primaryNav" aria-label="Navegación principal">
       <ul class="nav__list" role="tablist">
         <li role="presentation">
-          <button class="nav__link is-active" data-target="home" role="tab" aria-selected="true" aria-controls="home">
-            <span class="nav__index">01</span> Acerca de mí
+          <button class="nav__link is-active" data-target="home" role="tab" aria-selected="true" aria-controls="home">Acerca de mí
           </button>
         </li>
         <li role="presentation">
-          <button class="nav__link" data-target="cnn" role="tab" aria-selected="false" aria-controls="cnn">
-            <span class="nav__index">02</span> CNN Chile
+          <button class="nav__link" data-target="cnn" role="tab" aria-selected="false" aria-controls="cnn">CNN Chile
           </button>
         </li>
         <li role="presentation">
-          <button class="nav__link" data-target="metro" role="tab" aria-selected="false" aria-controls="metro">
-            <span class="nav__index">03</span> Metro de Santiago
+          <button class="nav__link" data-target="metro" role="tab" aria-selected="false" aria-controls="metro">Metro de Santiago
           </button>
         </li>
         <li role="presentation">
-          <button class="nav__link" data-target="faro" role="tab" aria-selected="false" aria-controls="faro">
-            <span class="nav__index">04</span> Faro Interno
+          <button class="nav__link" data-target="faro" role="tab" aria-selected="false" aria-controls="faro">Faro Interno
           </button>
         </li>
         <li role="presentation">
-          <button class="nav__link" data-target="academia" role="tab" aria-selected="false" aria-controls="academia">
-            <span class="nav__index">05</span> Exp. Académica
+          <button class="nav__link" data-target="academia" role="tab" aria-selected="false" aria-controls="academia">Exp. Académica
           </button>
         </li>
       </ul>
@@ -153,21 +148,23 @@
   <section id="cnn" class="section" data-section aria-labelledby="cnn-title">
     <div class="section__inner">
 
-      <header class="page-head reveal">
-        <p class="eyebrow"><span class="eyebrow__bar"></span>Experiencia profesional</p>
-        <h2 id="cnn-title">CNN Chile</h2>
-        <p class="page-head__role">Periodista &mdash; Área de Radios Regionales</p>
-        <p class="page-head__meta">07/2026 &ndash; 09/2026</p>
-        <ul class="lead-list">
-          <li><span>Director Ejecutivo</span> Ricardo Olivares</li>
-          <li><span>Editor</span> Carlos Maturana</li>
-        </ul>
-      </header>
+      <div class="editorial-block">
+        <header class="page-head page-head--editorial reveal">
+          <p class="eyebrow"><span class="eyebrow__bar"></span>Experiencia profesional</p>
+          <h2 id="cnn-title">CNN Chile</h2>
+          <p class="page-head__role">Periodista &mdash; Área de Radios Regionales</p>
+          <p class="page-head__meta">07/2026 &ndash; 09/2026</p>
+          <ul class="lead-list">
+            <li><span>Director Ejecutivo</span> Ricardo Olivares</li>
+            <li><span>Editor</span> Carlos Maturana</li>
+          </ul>
+        </header>
 
-      <div class="media-block reveal">
-        <!-- REEMPLAZAR: foto de apoyo CNN Chile -->
-        <img src="https://i.imgur.com/jmgJA7p.jpeg" alt="Javier Vera Araneda en labores periodísticas y de producción para CNN Chile" loading="lazy">
-        <p class="media-block__caption">Javier Vera Araneda en labores periodísticas y de producción para CNN Chile.</p>
+        <div class="media-block media-block--editorial reveal">
+          <!-- REEMPLAZAR: foto de apoyo CNN Chile -->
+          <img src="https://i.imgur.com/jmgJA7p.jpeg" alt="Javier Vera Araneda en labores periodísticas y de producción para CNN Chile" loading="lazy">
+          <p class="media-block__caption">Javier Vera Araneda en labores periodísticas y de producción para CNN Chile.</p>
+        </div>
       </div>
 
       <div class="stat-grid reveal">
@@ -177,7 +174,7 @@
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="card-grid card-grid--bento">
 
         <article class="card reveal">
           <p class="card__tag">Radio</p>
@@ -237,13 +234,7 @@
         </ul>
       </header>
 
-      <div class="media-block reveal">
-        <!-- REEMPLAZAR: foto en terreno Metro de Santiago -->
-        <img src="https://i.imgur.com/x0yxKTl.jpeg" alt="Javier Vera Araneda en terreno y operaciones de Metro de Santiago" loading="lazy">
-        <p class="media-block__caption">Javier Vera Araneda en terreno y operaciones de Metro de Santiago.</p>
-      </div>
-
-      <!-- Métricas destacadas con contadores animados -->
+      <!-- Métricas destacadas con contadores animados: van primero, como protagonistas -->
       <div class="stat-grid stat-grid--4 reveal">
         <div class="stat-box">
           <span class="stat-box__number" data-count-to="2000" data-prefix="+">0</span>
@@ -257,6 +248,12 @@
           <span class="stat-box__number" data-count-to="15">0</span>
           <span class="stat-box__label">Subgerencias capacitadas en la plataforma</span>
         </div>
+      </div>
+
+      <div class="media-block media-block--wide reveal">
+        <!-- REEMPLAZAR: foto en terreno Metro de Santiago -->
+        <img src="https://i.imgur.com/x0yxKTl.jpeg" alt="Javier Vera Araneda en terreno y operaciones de Metro de Santiago" loading="lazy">
+        <p class="media-block__caption">Javier Vera Araneda en terreno y operaciones de Metro de Santiago.</p>
       </div>
 
       <div class="card-grid">
@@ -331,8 +328,8 @@
         <p class="page-head__meta">2026 &middot; Centro Psicológico Faro Interno</p>
       </header>
 
-      <div class="card-grid reveal">
-        <article class="card">
+      <div class="achievement-row reveal">
+        <article class="card card--feature">
           <p class="card__tag">Estrategia y marca</p>
           <h3>Rebranding institucional</h3>
           <p>Dirección estratégica de contenidos y ejecución del rebranding institucional del centro.</p>
