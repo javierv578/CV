@@ -258,6 +258,10 @@ button {
   margin-bottom: var(--space-md);
 }
 
+.subsection-title--spaced {
+  margin-bottom: var(--space-lg);
+}
+
 /* --------------------------------------------------------------------------
    4. NAVBAR
    -------------------------------------------------------------------------- */
@@ -711,7 +715,7 @@ button {
 /* Piezas de video embebidas (Google Drive u otro proveedor) */
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
 }
 
@@ -733,7 +737,7 @@ button {
 .video-card__frame {
   position: relative;
   width: 100%;
-  height: clamp(320px, 70vh, 680px);
+  height: clamp(260px, 48vh, 480px);
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg-elevated);
