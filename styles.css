@@ -254,13 +254,15 @@ button {
 }
 
 .subsection-title {
+  width: 100%;
   font-size: 1.4rem;
   margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
 }
 
 .subsection-title--spaced {
-  margin-bottom: var(--space-lg);
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -713,12 +715,12 @@ button {
   margin-bottom: var(--space-md);
 }
 
-/* Piezas de video embebidas (Google Drive u otro proveedor) */
+/* Piezas de video embebidas (Google Drive u otro proveedor) — formato vertical 9:16 */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
   gap: var(--space-md);
-  justify-items: center;
+  justify-content: center;
 }
 
 .video-card {
@@ -739,9 +741,11 @@ button {
 
 .video-card__frame {
   position: relative;
-  width: min(100%, 480px);
+  width: 100%;
+  max-width: 340px;
   aspect-ratio: 9 / 16;
   height: auto;
+  min-height: 520px;
   margin: 0 auto;
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -754,7 +758,8 @@ button {
   inset: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
+  border-radius: var(--radius-sm);
 }
 
 /* --------------------------------------------------------------------------
