@@ -615,6 +615,43 @@ button {
   border: 0;
 }
 
+.media-card__embed-credit {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  padding-top: 0.4rem;
+}
+
+.media-card__embed-credit a {
+  color: var(--text-muted);
+}
+
+.media-card__embed-credit a:hover {
+  color: var(--accent-2);
+}
+
+/* El embed de Instagram trae su propio fondo blanco y sombra —
+   se deja "flotar" sobre la tarjeta oscura en vez de forzarle el tema */
+.media-card--instagram {
+  padding: var(--space-sm);
+  align-items: center;
+}
+
+.media-card--instagram .media-card__tag {
+  align-self: flex-start;
+  padding: 0 var(--space-xs);
+}
+
+.media-card__embed--instagram {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+.media-card__embed--instagram iframe {
+  border-radius: var(--radius-sm);
+}
+
 .media-card__link {
   margin-top: auto;
   padding-top: 0.4rem;

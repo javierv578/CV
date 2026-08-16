@@ -60,6 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
     closeMobileMenu();
     triggerRevealFor(targetSection);
     triggerCountersFor(targetSection);
+    reprocessInstagramEmbeds(targetSection);
+  }
+
+  /**
+   * El embed oficial de Instagram solo calcula bien su tamaño si el
+   * contenedor es visible al procesarlo. Como esta sección puede empezar
+   * oculta (display:none) mientras el script de Instagram carga, se vuelve
+   * a pedir el procesamiento cada vez que se entra a una sección que
+   * contenga un embed de Instagram.
+   */
+  function reprocessInstagramEmbeds(section) {
+    if (!section.querySelector('.instagram-media')) return;
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
   }
 
   function getSectionLabel(targetId) {
