@@ -715,7 +715,8 @@ button {
   margin-bottom: var(--space-md);
 }
 
-/* Piezas de video embebidas (Google Drive u otro proveedor) — formato vertical 9:16 */
+/* Piezas de video embebidas — por defecto formato estándar 16:9;
+   usa .video-card--vertical en el <article> para clips tipo Reel/Short (9:16) */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
@@ -729,6 +730,8 @@ button {
   border-radius: var(--radius-md);
   padding: var(--space-sm);
   width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .video-card__title {
@@ -742,11 +745,7 @@ button {
 .video-card__frame {
   position: relative;
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 9 / 16;
-  height: auto;
-  min-height: 520px;
-  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg-elevated);
@@ -758,8 +757,36 @@ button {
   inset: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
+  border: 0;
   border-radius: var(--radius-sm);
+}
+
+/* Modificador para videos verticales (Reel / Short / TikTok) */
+.video-card--vertical .video-card__frame {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Móvil: una sola columna, ancho contenido, sin desbordes laterales */
+@media (max-width: 768px) {
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .video-card {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .video-card--vertical .video-card__frame {
+    max-width: 280px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -996,8 +1023,7 @@ button {
   }
 
   .project-grid,
-  .card-grid,
-  .video-grid {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 
