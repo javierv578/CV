@@ -75,6 +75,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -716,14 +717,20 @@ button {
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-sm);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  box-sizing: border-box;
 }
 
 .video-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: var(--space-sm);
+  padding: var(--space-xs);
 }
 
 .video-card__title {
@@ -737,7 +744,7 @@ button {
 .video-card__frame {
   position: relative;
   width: 100%;
-  height: clamp(260px, 48vh, 480px);
+  height: clamp(320px, 62vh, 640px);
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg-elevated);
