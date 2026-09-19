@@ -618,20 +618,6 @@ button {
   border: 0;
 }
 
-.media-card__embed-credit {
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  padding-top: 0.4rem;
-}
-
-.media-card__embed-credit a {
-  color: var(--text-muted);
-}
-
-.media-card__embed-credit a:hover {
-  color: var(--accent-2);
-}
-
 /* El embed de Instagram trae su propio fondo blanco y sombra —
    se deja "flotar" sobre la tarjeta oscura en vez de forzarle el tema */
 .media-card--instagram {
